@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Conteur de Clics</title>
+  </head>
+  <body>
+    <main>
+      <div id="notification" class="notification">
+        <p id="notification-texte">Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="container">
+        <div class="limite">
+          <h3>Limite haute</h3>
+          <input type="number" id="limitehaute" value="3" />
+        </div>
+
+        <div class="content-center">
+          <div class="decrementer">
+            <button class="btn-decrement" id="decrement">-</button><br />
+            <input type="number" id="decrement-value" value="1" />
+          </div>
+
+          <div class="resultat" id="result-value">0</div>
+
+          <div class="incrementer">
+            <button class="btn-increment" id="increment">+</button><br />
+            <input type="number" id="increment-value" value="1" />
+          </div>
+        </div>
+
+        <div class="limite">
+          <h3>Limite basse</h3>
+          <input type="number" id="limitebasse" value="-2" />
+        </div>
+
+        <button class="btn-reset" id="reset">Reset</button>
+
+        <h3 class="z-d-clic limite">Zone de clic</h3>
+
+        <div class="instruction" id="zdc">
+          <p>Clic gauche : Incrementation</p>
+          <p>Clic droite : Decrementation</p>
+        </div>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
