@@ -17,10 +17,10 @@ const limiteB = 'LIMITE BASSE ATTINT';
 
 // INCREMENT
 const btnIncrement = () => {
-  number = number + +inputValueInc.value;
+  number += +inputValueInc.value;
   result.textContent = number;
 
-  if (number > LimiteHauteValue.value) {
+  if (number >= LimiteHauteValue.value) {
     result.textContent = LimiteHauteValue.value;
     NotificationText.textContent = limiteH;
     Notification();
@@ -29,9 +29,8 @@ const btnIncrement = () => {
 
 // DECREMENT
 const btnDecrement = () => {
-  number = number - inputValueDec.value;
+  number -= inputValueDec.value;
   result.textContent = number;
-
   limite_Basse();
 };
 
@@ -44,14 +43,14 @@ const btnReset = () => {
 // ZONE DE CLICK
 const zdcGauche = (e) => {
   e.preventDefault();
-  number--;
+  number -= inputValueDec.value;
   result.textContent = number;
   limite_Basse();
 };
 
 // LIMITE BASSE
 function limite_Basse() {
-  if (number < LimiteBasseValue.value) {
+  if (number <= LimiteBasseValue.value) {
     result.textContent = LimiteBasseValue.value;
     NotificationText.textContent = limiteB;
     Notification();

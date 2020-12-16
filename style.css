@@ -156,7 +156,7 @@ button:hover {
 }
 
 .afficher {
-  top: 0;
+  top: 1%;
 }
 
 #notification-texte {
@@ -174,18 +174,29 @@ button:hover {
   .content-center {
     flex-direction: column;
   }
+
+  .afficher {
+    top: 1%;
+    left: -30%;
+  }
+
+  .resultat {
+    font-size: 10rem;
+  }
+
   .incrementer {
     position: absolute;
     right: 0%;
-    top: 30%;
+    top: 22%;
   }
 
   .decrementer {
     position: absolute;
     left: 0%;
-    top: 30%;
+    top: 22%;
   }
-  .instruction {
+  .instruction,
+  h3.z-d-clic {
     display: none;
   }
 }
