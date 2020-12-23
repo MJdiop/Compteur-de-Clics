@@ -10,8 +10,6 @@ const LimiteHauteValue = document.querySelector('#limitehaute');
 const LimiteBasseValue = document.querySelector('#limitebasse');
 const notification = document.querySelector('#notification');
 const NotificationText = document.querySelector('#notification-texte');
-const limiteH = 'LIMITE HAUTE ATTINT';
-const limiteB = 'LIMITE BASSE ATTINT';
 
 /* FUNCTION */
 
@@ -20,9 +18,11 @@ const btnIncrement = () => {
   number += +inputValueInc.value;
   result.textContent = number;
 
-  if (number >= LimiteHauteValue.value) {
-    result.textContent = LimiteHauteValue.value;
-    NotificationText.textContent = limiteH;
+  const limiteH = LimiteHauteValue.value;
+
+  if (number >= limiteH) {
+    result.textContent = limiteH;
+    NotifText(`LIMITE HAUTE (${limiteH}) ATTEINTE`);
     Notification();
   }
 };
@@ -36,8 +36,7 @@ const btnDecrement = () => {
 
 // RESET
 const btnReset = () => {
-  number = 0;
-  result.textContent = number;
+  Reset();
 };
 
 // ZONE DE CLICK
@@ -48,16 +47,31 @@ const zdcGauche = (e) => {
   limite_Basse();
 };
 
+function Reset() {
+  number = 0;
+  result.textContent = number;
+  inputValueDec.value = 1;
+  inputValueInc.value = 1;
+  LimiteHauteValue.value = 3;
+  LimiteBasseValue.value = -3;
+}
+
 // LIMITE BASSE
 function limite_Basse() {
-  if (number <= LimiteBasseValue.value) {
-    result.textContent = LimiteBasseValue.value;
-    NotificationText.textContent = limiteB;
+  const limiteB = LimiteBasseValue.value;
+
+  if (number <= limiteB) {
+    result.textContent = limiteB;
+    NotifText(`LIMITE BASSE (${limiteB}) ATTEINTE`);
     Notification();
   }
 }
 
 // NOTIFICATION
+function NotifText(val) {
+  return (NotificationText.textContent = val);
+}
+
 const Notification = () => {
   notification.classList.add('afficher');
   result.classList.add('limite-atteinte');
